@@ -33,7 +33,7 @@ CREATE TABLE `sucos`.`produto` (
   `preco` FLOAT NULL);
 
 create table sucos.cliente2 as select * from sucos.cliente;
-create table sucos.cliente3 as select * from sucos.cliente;
+create table sucos.vendedor2 as select * from sucos.vendedor;
 
 drop table sucos.cliente2;
-drop table sucos.cliente3;
+drop table sucos.vendedor;
