@@ -22,3 +22,18 @@ create table if not exists sucos.vendedor (
     nome varchar(100),
     percentual_comissao float
 );
+
+-- feito pelo assistente do MySQL Workbench
+CREATE TABLE `sucos`.`produto` (
+  `id` VARCHAR(20) NULL,
+  `nome` VARCHAR(150) NULL,
+  `embalagem` VARCHAR(50) NULL,
+  `tamanho` VARCHAR(50) NULL,
+  `sabor` VARCHAR(50) NULL,
+  `preco` FLOAT NULL);
+
+create table sucos.cliente2 as select * from sucos.cliente;
+create table sucos.cliente3 as select * from sucos.cliente;
+
+drop table sucos.cliente2;
+drop table sucos.cliente3;
