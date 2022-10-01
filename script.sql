@@ -32,6 +32,7 @@ insert into sucos.vendedor (matricula, nome, percentual_comissao) values
 ('00236', 'Cláudia Morais', 0.08);
 update sucos.vendedor set percentual_comissao = 0.11 where matricula = '00236';
 update sucos.vendedor set nome = 'José Geraldo da Fonseca Junior' where matricula = '00233';
+delete from sucos.vendedor where matricula = '00233';
 select * from sucos.vendedor;
 
 -- feito pelo assistente do MySQL Workbench
@@ -51,4 +52,5 @@ insert into sucos.produto (id, nome, embalagem, tamanho, sabor, preco) values
 ('1078680', 'Frescor do Verão - 470 ml - Manga', 'Lata', '470 ml','Manga',5.18);
 update sucos.produto set embalagem = 'Lata', preco = 2.46 where id = '544931';
 update sucos.produto set embalagem = 'Garrafa' where id = '1078680';
+delete from sucos.produto where id = '1078680';
 select * from sucos.produto;
