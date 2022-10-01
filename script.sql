@@ -53,4 +53,5 @@ insert into sucos.produto (id, nome, embalagem, tamanho, sabor, preco) values
 update sucos.produto set embalagem = 'Lata', preco = 2.46 where id = '544931';
 update sucos.produto set embalagem = 'Garrafa' where id = '1078680';
 delete from sucos.produto where id = '1078680';
+alter table sucos.produto add primary key (id);
 select * from sucos.produto;
