@@ -7,3 +7,7 @@ select cpf, nome from tbcliente limit 5;
 select cpf as cpf_cliente, nome as nome_cliente from tbcliente;
 
 select nome, cpf, sexo, idade, data_nascimento from tbcliente;
+
+select * from tbproduto where produto = '544931';
+
+select * from tbcliente where cidade = 'Rio de Janeiro';
