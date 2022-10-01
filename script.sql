@@ -25,7 +25,9 @@ create table if not exists sucos.vendedor (
     percentual_comissao float
 );
 create table sucos.vendedor2 as select * from sucos.vendedor;
-drop table sucos.vendedor;
+drop table sucos.vendedor2;
+insert into sucos.vendedor (matricula, nome, percentual_comissao)
+values ('00233', 'João Geraldo da Fonseca', 0.10);
 
 -- feito pelo assistente do MySQL Workbench
 CREATE TABLE `sucos`.`produto` (
