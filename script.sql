@@ -1,6 +1,7 @@
 drop database sucos;
 create database if not exists sucos;
 
+----------------------- CLIENTE -----------------------
 create table  if not exists sucos.cliente (
 	cpf varchar(11),
     nome varchar(100),
@@ -18,23 +19,13 @@ create table  if not exists sucos.cliente (
 );
 create table sucos.cliente2 as select * from sucos.cliente;
 drop table sucos.cliente2;
+alter table sucos.cliente add primary key (cpf);
+alter table sucos.cliente add column (data_nascimento date);
+insert into cliente (cpf, nome, endereco1, endereco2, bairro, cidade, estado, cep, idade, sexo, limite_credito, volume_compra, primeira_compra, data_nascimento) values
+('00388934505', 'João da Silva', 'Rua projetada A número 10', '', 'Vila Roman', 'Caratinga', 'Amazonas', '2222222', 30, 'M', 10000.00, 2000, 0, '1989-10-05');
 
-create table if not exists sucos.vendedor (
-	matricula varchar(5),
-    nome varchar(100),
-    percentual_comissao float
-);
-create table sucos.vendedor2 as select * from sucos.vendedor;
-drop table sucos.vendedor2;
-insert into sucos.vendedor (matricula, nome, percentual_comissao) values
-('00233', 'João Geraldo da Fonseca', 0.10),
-('00235', 'Márcio Almeida Silva', 0.08),
-('00236', 'Cláudia Morais', 0.08);
-update sucos.vendedor set percentual_comissao = 0.11 where matricula = '00236';
-update sucos.vendedor set nome = 'José Geraldo da Fonseca Junior' where matricula = '00233';
-delete from sucos.vendedor where matricula = '00233';
-select * from sucos.vendedor;
 
+----------------------- PRODUTO -----------------------
 -- feito pelo assistente do MySQL Workbench
 CREATE TABLE `sucos`.`produto` (
   `id` VARCHAR(20) NULL,
@@ -55,3 +46,20 @@ update sucos.produto set embalagem = 'Garrafa' where id = '1078680';
 delete from sucos.produto where id = '1078680';
 alter table sucos.produto add primary key (id);
 select * from sucos.produto;
+
+----------------------- VENDEDOR -----------------------
+create table if not exists sucos.vendedor (
+	matricula varchar(5),
+    nome varchar(100),
+    percentual_comissao float
+);
+create table sucos.vendedor2 as select * from sucos.vendedor;
+drop table sucos.vendedor2;
+insert into sucos.vendedor (matricula, nome, percentual_comissao) values
+('00233', 'João Geraldo da Fonseca', 0.10),
+('00235', 'Márcio Almeida Silva', 0.08),
+('00236', 'Cláudia Morais', 0.08);
+update sucos.vendedor set percentual_comissao = 0.11 where matricula = '00236';
+update sucos.vendedor set nome = 'José Geraldo da Fonseca Junior' where matricula = '00233';
+delete from sucos.vendedor where matricula = '00233';
+select * from sucos.vendedor;
