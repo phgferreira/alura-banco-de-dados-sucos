@@ -20,4 +20,8 @@ select * from tabela_de_clientes where cidade in ('rio de janeiro','são paulo')
 
 select * from tabela_de_clientes where cidade in ('rio de janeiro','são paulo') and idade between 19 and 22;
 
+select * from tabela_de_produtos where sabor like '%maça%' and embalagem = 'pet';
+
+select * from tabela_de_clientes where nome like '%mattos';
+
 
