@@ -66,5 +66,12 @@ where cidade = 'Rio de Janeiro'
 group by estado, bairro
 order by bairro;
 
+select estado, sum(limite_de_credito) soma_limite
+from tabela_de_clientes
+group by estado
+having sum(LIMITE_DE_CREDITO) > 900000;
 
+select embalagem, max(preco_de_lista) maximo, min(preco_de_lista) minimo from tabela_de_produtos
+group by embalagem
+having sum(preco_de_lista) <= 80 and max(preco_de_lista) >= 5
 
