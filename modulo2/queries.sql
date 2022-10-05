@@ -73,5 +73,30 @@ having sum(LIMITE_DE_CREDITO) > 900000;
 
 select embalagem, max(preco_de_lista) maximo, min(preco_de_lista) minimo from tabela_de_produtos
 group by embalagem
-having sum(preco_de_lista) <= 80 and max(preco_de_lista) >= 5
+having sum(preco_de_lista) <= 80 and max(preco_de_lista) >= 5;
 
+select nome_do_produto, preco_de_lista,
+	case
+		when preco_de_lista >= 12 then 'PRODUTO CARO'
+        when preco_de_lista between 7 and 12 then 'PRODUTO EM CONTA'
+        else 'PRODUTO BARATO'
+	end status_preco
+from tabela_de_produtos
+order by 2;
+
+select embalagem,
+	case
+		when preco_de_lista >= 12 then 'PRODUTO CARO'
+        when preco_de_lista between 7 and 12 then 'PRODUTO EM CONTA'
+        else 'PRODUTO BARATO'
+	end status_preco,
+    round(avg(preco_de_lista),2) preco_medio
+from tabela_de_produtos
+where sabor = 'manga'
+group by embalagem,
+	case
+		when preco_de_lista >= 12 then 'PRODUTO CARO'
+        when preco_de_lista between 7 and 12 then 'PRODUTO EM CONTA'
+        else 'PRODUTO BARATO'
+	end
+order by 1, 2, 3;
