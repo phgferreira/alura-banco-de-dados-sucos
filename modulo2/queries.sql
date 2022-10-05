@@ -24,4 +24,12 @@ select * from tabela_de_produtos where sabor like '%maça%' and embalagem = 'pet
 
 select * from tabela_de_clientes where nome like '%mattos';
 
+select * from tabela_de_produtos;
 
+select * from tabela_de_produtos limit 5;
+
+-- Pega a partir da 2º os 3 próximos
+select * from tabela_de_produtos limit 2, 3;
+
+-- Pega a 1ª linha e os dois próximos
+select * from tabela_de_produtos limit 0, 2;
