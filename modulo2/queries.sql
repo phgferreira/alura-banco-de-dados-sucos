@@ -33,3 +33,15 @@ select * from tabela_de_produtos limit 2, 3;
 
 -- Pega a 1ª linha e os dois próximos
 select * from tabela_de_produtos limit 0, 2;
+
+select * from tabela_de_produtos;
+
+select * from tabela_de_produtos order by preco_de_lista;
+
+select * from tabela_de_produtos order by preco_de_lista desc;
+
+select * from tabela_de_produtos order by nome_do_produto;
+
+select * from tabela_de_produtos order by nome_do_produto desc;
+
+select * from tabela_de_produtos order by embalagem desc, nome_do_produto;
