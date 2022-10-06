@@ -132,3 +132,29 @@ select upper('olá, tudo bem?') resultado;
 -- texto, index, lenght
 select substring('olá, tudo bem?', 6, 4) resultado;
 
+select concat(nome,'(',cpf,')') resultado from tabela_de_clientes;
+
+select adddate('2017-06-15', interval 10 day);
+
+select adddate('2017-06-15', interval 1 year);
+
+-- Retorna a data atual
+select curdate();
+
+-- Retorna a data e hora atual
+select current_timestamp();
+
+-- Apresenta um intervalo de datas em dias
+select datediff('2017-06-25','2017-06-15') intervalo_em_dias;
+
+select date_add('2017-06-15', interval 10 day);
+
+-- Dia da semana por extenso
+select concat( dayname( curdate() ), ' ', monthname( curdate() ) ) dia_e_mes;
+
+select distinct data_venda,
+	dayname(data_venda) dia,
+    monthname(data_venda) mes,
+    year(data_venda) ano
+from notas_fiscais;
+
