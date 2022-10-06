@@ -104,5 +104,10 @@ order by 1, 2, 3;
 select a.matricula, a.nome, count(*) qt_notas
 from		tabela_de_vendedores a
 inner join 	notas_fiscais b		on a.matricula = b.matricula
-group by a.matricula, a.nome
+group by a.matricula, a.nome;
+
+select v.bairro, v.nome, de_ferias, c.bairro, c.nome
+from		tabela_de_vendedores v
+full join	tabela_de_clientes c 		on c.bairro = v.bairro
+
 
