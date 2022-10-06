@@ -100,3 +100,9 @@ group by embalagem,
         else 'PRODUTO BARATO'
 	end
 order by 1, 2, 3;
+
+select a.matricula, a.nome, count(*) qt_notas
+from		tabela_de_vendedores a
+inner join 	notas_fiscais b		on a.matricula = b.matricula
+group by a.matricula, a.nome
+
