@@ -120,3 +120,15 @@ select distinct bairro, nome, 'CLIENTE', cpf tipo from tabela_de_clientes
 union
 select distinct bairro, nome, 'VENDEDOR', matricula from tabela_de_vendedores
 order by 1;
+
+
+select ltrim('                       olá                       ') resultado;
+select rtrim('                       olá                       ') resultado;
+
+select concat('olá',' ','tudo bem?') resultado;
+
+select upper('olá, tudo bem?') resultado;
+
+-- texto, index, lenght
+select substring('olá, tudo bem?', 6, 4) resultado;
+
