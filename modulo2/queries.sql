@@ -172,3 +172,13 @@ select rand() resultado;
 select numero, quantidade, preco,
 	round(quantidade * preco, 2) faturamento
 from itens_notas_fiscais;
+
+
+select current_timestamp() resultado;
+
+select concat('O dia de hoje é ', current_timestamp()) resultado;
+
+select concat('O dia de hoje é ', date_format(current_timestamp(), '%W, %d/%m/%Y - %U')) resultado;
+
+select convert(23.3, time) resultado;
+ 
