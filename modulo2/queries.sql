@@ -158,3 +158,17 @@ select distinct data_venda,
     year(data_venda) ano
 from notas_fiscais;
 
+select (23+((25-2)/2)*45) resultado;
+
+select ceiling(12.33333332323232) resultado;
+
+select round(12.33733332323232, 2) resultado;
+
+select floor(12.93733332323232) resultado;
+
+-- Retorna números aleatórios
+select rand() resultado;
+
+select numero, quantidade, preco,
+	round(quantidade * preco, 2) faturamento
+from itens_notas_fiscais;
