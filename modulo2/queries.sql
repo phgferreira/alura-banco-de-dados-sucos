@@ -106,8 +106,17 @@ from		tabela_de_vendedores a
 inner join 	notas_fiscais b		on a.matricula = b.matricula
 group by a.matricula, a.nome;
 
+-- Forma correta de fazer o FULL JOIN no MySQL
 select v.bairro, v.nome, de_ferias, c.bairro, c.nome
 from		tabela_de_vendedores v
-full join	tabela_de_clientes c 		on c.bairro = v.bairro
+left join	tabela_de_clientes c 		on c.bairro = v.bairro
+union
+select v.bairro, v.nome, de_ferias, c.bairro, c.nome
+from		tabela_de_vendedores v
+right join	tabela_de_clientes c 		on c.bairro = v.bairro;
 
 
+select distinct bairro, nome, 'CLIENTE', cpf tipo from tabela_de_clientes
+union
+select distinct bairro, nome, 'VENDEDOR', matricula from tabela_de_vendedores
+order by 1;
